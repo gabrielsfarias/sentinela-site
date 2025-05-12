@@ -1,0 +1,16 @@
+/* style.css */
+
+/* Estilos base e customizações mínimas */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Caso deseje ajustar a seção hero ou o formulário, adicione seus estilos aqui */
+.hero h2 {
+    /* O Bootstrap já define o tamanho com display-4 */
+}
+
+.lead-form {
+    /* Espaçamento adicional ou ajustes podem ser feitos aqui conforme necessário */
+}
