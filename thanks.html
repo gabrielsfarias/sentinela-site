@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obrigado!</title>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS via CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-MECj4rJzxs1f2xRkT2GMwM7z0Fl9I9OlH2lAArIQ7jRYE9V7pUVVV1dpZf6D2jkC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container text-center py-5">
-        <h1>Obrigado!</h1>
-        <p>Seu cadastro foi realizado com sucesso. Em breve, entraremos em contato.</p>
-        <a href="index.html" class="btn btn-primary">Voltar para a Página Inicial</a>
+    <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card shadow p-4" style="max-width: 500px; width: 100%;">
+            <div class="card-body text-center">
+                <h1 class="card-title mb-4">Obrigado!</h1>
+                <p class="card-text mb-4">Seu cadastro foi realizado com sucesso. Em breve, entraremos em contato.</p>
+                <a href="index.html" class="btn btn-primary">Voltar para a Página Inicial</a>
+            </div>
+        </div>
     </div>
 
+    <!-- Scripts: Bootstrap JS, Popper e jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXd9hH3+8jPXvd1ngKl2RPfvM+GP3z5vlL9U3s5Cmh3RMpzquVeoxVQyCDG+wiu"
         crossorigin="anonymous"></script>

@@ -24,31 +24,36 @@
         <div class="container my-5">
             <!-- Seção Hero -->
             <section class="hero text-center mb-5">
-                <h2 class="display-4">Nunca mais perca um documento importante!</h2>
-                <p class="lead">Automatize a extração de dados e receba alertas customizados para manter seus documentos
-                    sempre atualizados.</p>
+                <div class="hero-content">
+                    <h2 class="display-4">Nunca mais perca um documento importante!</h2>
+                    <p class="lead">Automatize a extração de dados e receba alertas customizados para manter seus
+                        documentos sempre atualizados.</p>
+                </div>
             </section>
 
-            <!-- Formulário de Captura (Netlify Forms) -->
+            <!-- Formulário de Captura -->
             <section>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <form class="lead-form" id="leadForm" action="/thanks.html" method="POST" data-netlify="true">
-                            <input type="hidden" name="form-name" value="lead-form">
-                            <div class="form-group">
-                                <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Seu e-mail" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">
-                                Inscreva-se para Acesso Antecipado
-                            </button>
-                        </form>
+                        <div class="card shadow-sm p-4">
+                            <form class="lead-form" id="leadForm" action="/thanks.html" method="POST"
+                                data-netlify="true">
+                                <input type="hidden" name="form-name" value="lead-form">
+                                <div class="form-group">
+                                    <label for="nome">Nome:</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Seu e-mail" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Inscreva-se para Acesso Antecipado
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -62,6 +67,7 @@
         </div>
     </footer>
 
+    <!-- Scripts: Bootstrap JS, Popper e jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXd9hH3+8jPXvd1ngKl2RPfvM+GP3z5vlL9U3s5Cmh3RMpzquVeoxVQyCDG+wiu"
         crossorigin="anonymous"></script>
