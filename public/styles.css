@@ -1,0 +1,255 @@
+:root {
+    --primary: #3B82F6;
+    --accent: #1E293B;
+    --bg: #F8FAFC;
+    --white: #fff;
+    --gray: #64748B;
+    --radius: 18px;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--accent);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary) 60%, #60A5FA 100%);
+    color: var(--white);
+    padding: 1rem 0 1rem 0;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.10);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.left,
+.right {
+    flex: 1 1 350px;
+}
+
+.left {
+    min-width: 320px;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right img {
+    max-width: 480px;
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+article h2,
+section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--primary);
+}
+
+#proposta p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: var(--gray);
+}
+
+#beneficios ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.2rem 0;
+}
+
+#beneficios li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+#beneficios li::before {
+    content: '✔';
+    color: var(--primary);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+#cta {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06);
+    padding: 1.2rem;
+    margin-top: 1rem;
+    animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#cta h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+label {
+    font-size: 1rem;
+    color: var(--gray);
+    margin-bottom: 0.15rem;
+}
+
+input {
+    padding: 0.6em 1em;
+    border: 1.5px solid var(--primary);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: #F1F5F9;
+    transition: border 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563EB;
+}
+
+button[type="submit"] {
+    background: var(--primary);
+    color: var(--white);
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.7em 0;
+    margin-top: 0.3rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.09);
+}
+
+button[type="submit"]:hover {
+    background: #2563EB;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.privacidade {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-top: 0.3rem;
+    text-align: left;
+}
+
+footer {
+    background: linear-gradient(90deg, var(--primary) 60%, #60A5FA 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0 0.8rem 0;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    margin-top: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+
+    .right img {
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .container {
+        padding: 0.7rem 0.3rem;
+    }
+
+    #cta {
+        padding: 0.7rem;
+    }
+
+    .right img {
+        max-width: 220px;
+    }
+}
+
+.aviso-desenvolvimento {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    /* tom cinza claro */
+    margin-top: 0.3rem;
+    font-style: italic;
+}
