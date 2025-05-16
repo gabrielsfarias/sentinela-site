@@ -10,7 +10,7 @@ document.getElementById('formCadastro').addEventListener('submit', async functio
     }
 
     try {
-        const response = await fetch('https://sentineladocs.netlify.app/cadastro', {
+        const response = await fetch('https://sentineladocs-b783f6fd6909.herokuapp.com/cadastro', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nome, email })
