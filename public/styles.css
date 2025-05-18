@@ -253,3 +253,27 @@ footer {
     margin-top: 0.3rem;
     font-style: italic;
 }
+
+.mensagem {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius);
+    border: 1.5px solid;
+    display: none;
+}
+
+.mensagem.sucesso {
+    color: #16a34a;
+    /* verde */
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.mensagem.erro {
+    color: #dc2626;
+    /* vermelho */
+    background: #fee2e2;
+    border-color: #dc2626;
+}

@@ -1,33 +1,57 @@
-document.getElementById('formCadastro').addEventListener('submit', async function (event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('formCadastro');
 
-    const nome = this.nome.value.trim();
-    const email = this.email.value.trim();
+    // Criar elemento de mensagem
+    const msgBox = document.createElement('div');
+    msgBox.id = 'mensagem';
+    msgBox.classList.add('mensagem');
+    msgBox.style.display = 'none'; // começa oculto
+    form.after(msgBox);
 
-    if (!nome || !email) {
-        alert('Por favor, preencha nome e e-mail.');
-        return;
+    let timeoutMsg;
+
+    function mostrarMensagem(texto, tipo = 'sucesso') {
+        msgBox.textContent = texto;
+        msgBox.classList.remove('erro', 'sucesso');
+        msgBox.classList.add(tipo);
+        msgBox.style.display = 'block';
+
+        // Limpar timeout anterior se houver
+        if (timeoutMsg) clearTimeout(timeoutMsg);
+
+        timeoutMsg = setTimeout(() => {
+            msgBox.style.display = 'none';
+            msgBox.textContent = '';
+            msgBox.classList.remove('erro', 'sucesso');
+        }, 3000);
     }
 
-    try {
-        const response = await fetch('https://sentineladocs-b783f6fd6909.herokuapp.com/cadastro', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome, email })
-        });
 
-        const data = await response.json();
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        if (!response.ok) {
-            alert(data.error || 'Erro ao cadastrar.');
-            return;
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        try {
+            const res = await fetch('/cadastro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, email })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                mostrarMensagem(data.erro || 'Erro ao cadastrar. Verifique os dados.', 'erro');
+                return;
+            }
+
+            mostrarMensagem('Cadastro realizado com sucesso!', 'sucesso');
+            form.reset();
+        } catch (err) {
+            mostrarMensagem('Erro ao conectar com o servidor. Tente novamente mais tarde.', 'erro');
+            console.error(err);
         }
-
-        alert(data.message || 'Cadastro realizado com sucesso!');
-        this.reset();
-
-    } catch (error) {
-        alert('Erro na comunicação com o servidor.');
-        console.error(error);
-    }
+    });
 });

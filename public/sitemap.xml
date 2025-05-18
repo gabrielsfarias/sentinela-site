@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.seusite.com/</loc> <!-- Substitua pela URL real quando publicar -->
-    <lastmod>2025-05-14</lastmod>       <!-- Atualize para a data da última modificação -->
+    <loc>https://sentineladocs-b783f6fd6909.herokuapp.com/</loc> <!-- Substitua pela URL real quando publicar -->
+    <lastmod>2025-05-16</lastmod>       <!-- Atualize para a data da última modificação -->
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

@@ -31,9 +31,23 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+async function emailValidoDeVerdade(email) {
+    const key = process.env.EMAIL_API;
+    const response = await fetch(`http://apilayer.net/api/check?access_key=${key}&email=${email}&smtp=1&format=1`);
+    const data = await response.json();
+
+    return data.smtp_check && !data.disposable;
+}
+
 app.post('/cadastro', async (req, res) => {
     const { nome, email } = req.body;
     if (!nome || !email) return res.status(400).json({ error: 'Nome e e-mail são obrigatórios.' });
+
+    const valido = await emailValidoDeVerdade(email);
+
+    if (!valido) {
+        return res.status(400).json({ erro: 'E-mail inválido ou temporário' });
+    }
     try {
         const existe = await pool.query('SELECT 1 FROM cadastros WHERE LOWER(email) = LOWER($1)', [email]);
         if (existe.rowCount > 0) {
