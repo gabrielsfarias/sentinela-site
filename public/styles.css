@@ -10,29 +10,28 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     min-height: 100vh;
     background: var(--bg);
     font-family: 'Inter', sans-serif;
     color: var(--accent);
     box-sizing: border-box;
-    /* Removido align-items e justify-content para evitar centralização vertical global */
 }
 
 header {
-    width: 100vw;
-    min-width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    flex-shrink: 0;
     background: linear-gradient(90deg, var(--primary) 60%, #60A5FA 100%);
     color: var(--white);
     padding: 0.7rem 0 0.7rem 0;
@@ -64,8 +63,13 @@ header p {
 }
 
 main {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid {
@@ -227,20 +231,15 @@ button[type="submit"]:hover {
 }
 
 footer {
-    width: 100vw;
-    min-width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    flex-shrink: 0;
     background: linear-gradient(90deg, var(--primary) 60%, #60A5FA 100%);
     color: var(--white);
     text-align: center;
     padding: 0.7rem 0 0.5rem 0;
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
-    margin-top: 1.2rem;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);
+    margin-top: 0;
 }
 
 @media (max-width: 900px) {
